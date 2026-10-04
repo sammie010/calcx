@@ -17,7 +17,7 @@ button:focus-visible{outline:3px solid var(--primary);outline-offset:2px}
 .icon{min-width:40px;height:40px;padding:0 10px;border-radius:12px;background:var(--card);border:1px solid var(--line);font-size:1.05rem;font-weight:600;transition:background .2s,transform .1s}
 .icon:hover{background:var(--key)}.icon:active{transform:scale(.94)}
 #angle{font-size:.75rem}
-.main{display:grid;gap:16px;align-items:start;justify-content:center;flex:1}
+.main{display:grid;grid-template-columns:minmax(0,1fr);gap:16px;align-items:start;justify-content:center;flex:1;width:100%;min-width:0}
 .calc{width:100%;max-width:420px;margin:0 auto;background:var(--card);border-radius:28px;padding:16px;box-shadow:var(--shadow);transition:background .3s}
 .display{position:relative;padding:12px 8px 14px;text-align:right;min-height:132px;display:flex;flex-direction:column;justify-content:flex-end;gap:4px}
 .expr{color:var(--muted);font-size:1.1rem;min-height:1.6em;white-space:nowrap;overflow-x:auto;scrollbar-width:none;padding-right:2px;padding-left:36px}
@@ -68,7 +68,7 @@ button:focus-visible{outline:3px solid var(--primary);outline-offset:2px}
   .close{display:inline-block}
   .scrim{position:fixed;inset:0;background:rgba(0,0,0,.45);z-index:10;opacity:0;pointer-events:none;transition:opacity .3s;display:block}
   .hist-open .scrim{opacity:1;pointer-events:auto}
-  .app{padding:12px}.calc{max-width:none}
+  .app{padding:12px}.calc{width:100%;max-width:480px}
 }
 @media (max-width:380px){.result{font-size:2.6rem}.keys,.sci{gap:8px}.keys button{font-size:1.25rem}.modes button{padding:6px 10px}}
 @media (max-height:640px){.display{min-height:100px}.keys button{height:48px}.sci button{height:40px}}
