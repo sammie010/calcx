@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>CalcX – Smart Calculator</title>
+<meta name="description" content="CalcX is a fast, accessible calculator with history, scientific mode and dark theme.">
+<meta name="theme-color" content="#6366F1">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%236366F1'/%3E%3Cpath d='M9 9l14 14M23 9L9 23' stroke='white' stroke-width='3' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="stylesheet" href="css/style.css">
+<script src="js/theme.js"></script>
+</head>
+<body>
+<div class="app">
+  <header class="bar">
+    <h1 class="logo">Calc<span>X</span></h1>
+    <div class="modes" role="tablist" aria-label="Calculator mode">
+      <button role="tab" id="tab-basic" aria-selected="true" data-mode="basic">Basic</button>
+      <button role="tab" id="tab-sci" aria-selected="false" data-mode="scientific">Scientific</button>
+    </div>
+    <div class="tools">
+      <button class="icon" id="angle" aria-label="Angle unit: degrees" title="Angle unit" hidden>DEG</button>
+      <button class="icon" id="histToggle" aria-label="Show history" aria-expanded="false" aria-controls="history">⟲</button>
+      <button class="icon" id="themeToggle" aria-label="Switch theme">☾</button>
+    </div>
+  </header>
+
+  <main class="main">
+    <section class="calc" aria-label="Calculator">
+      <div class="display">
+        <div class="expr" id="expr" aria-label="Expression"></div>
+        <div class="result" id="result" role="status" aria-live="polite">0</div>
+        <div class="msg" id="msg" role="alert"></div>
+        <button class="del" data-k="DEL" aria-label="Delete last character">⌫</button>
+      </div>
+      <div class="sci" id="sci" hidden>
+        <button data-k="sin(" class="fn">sin</button><button data-k="cos(" class="fn">cos</button><button data-k="tan(" class="fn">tan</button><button data-k="log(" class="fn">log</button>
+        <button data-k="ln(" class="fn">ln</button><button data-k="√(" class="fn" aria-label="Square root">√</button><button data-k="^2" class="fn" aria-label="Square">x²</button><button data-k="^" class="fn" aria-label="Power">xʸ</button>
+        <button data-k="π" class="fn">π</button><button data-k="e" class="fn">e</button><button data-k="(" class="fn">(</button><button data-k=")" class="fn">)</button>
+      </div>
+      <div class="keys">
+        <button data-k="AC" class="util">AC</button><button data-k="±" class="util" aria-label="Toggle sign">±</button><button data-k="%" class="util" aria-label="Percent">%</button><button data-k="÷" class="op" aria-label="Divide">÷</button>
+        <button data-k="7">7</button><button data-k="8">8</button><button data-k="9">9</button><button data-k="×" class="op" aria-label="Multiply">×</button>
+        <button data-k="4">4</button><button data-k="5">5</button><button data-k="6">6</button><button data-k="−" class="op" aria-label="Subtract">−</button>
+        <button data-k="1">1</button><button data-k="2">2</button><button data-k="3">3</button><button data-k="+" class="op" aria-label="Add">+</button>
+        <button data-k="00">00</button><button data-k="0">0</button><button data-k=".">.</button><button data-k="=" class="eq" aria-label="Equals">=</button>
+      </div>
+    </section>
+
+    <aside class="history" id="history" aria-label="Calculation history">
+      <div class="h-head"><h2>History</h2><button class="link" id="clearHist">Clear all</button><button class="link close" id="closeHist">Close</button></div>
+      <ul id="histList" class="h-list"></ul>
+      <p class="empty" id="histEmpty">No calculations yet. Results you finish with = appear here.</p>
+    </aside>
+  </main>
+</div>
+<div class="scrim" id="scrim"></div>
+<noscript><p style="text-align:center">CalcX needs JavaScript to run.</p></noscript>
+<script src="js/calculator.js"></script>
+<script src="js/history.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
